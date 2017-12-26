@@ -120,12 +120,25 @@ contract pepeCoin is tripartate_ownership {
         return true;
     }
 
-    function take_bid() public payable{
+    function bid() public payable{
         if (msg.value > 0){
            amount_bid[msg.sender] += msg.value;
            return true;
         }
         return false;
+    }
+
+    function withdraw_bid() public {
+        if (amount_bid[msg.sender] == 0){
+            return false;
+        }
+        msg.sender.transfer(amount_bid);
+        if (msg.sender == max_bidder){
+            address _max_bidder
+            for ( i++){
+                if ()
+            }
+        }
     }
 }
 
